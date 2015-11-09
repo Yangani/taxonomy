@@ -108,6 +108,7 @@ var verifyClass = function(constructor) {
 
         var extendsPrototype = requireOption('extendsPrototype');
         it(might('extend the constructor function\'s prototype', extendsPrototype), function() {
+          console.log('constructors prototype:', Bee.constructor.prototype);
           var prototypeObjectPropertyCount = Object.keys(constructor.prototype).length;
           assuming(extendsPrototype).expect(prototypeObjectPropertyCount).to.be.above(0);
         });
